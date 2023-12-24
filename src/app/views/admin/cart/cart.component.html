@@ -1,0 +1,61 @@
+<div class="Cart ms-3 me-1">
+    <div class=" mt-2 bordBox row ">
+        <div class="cartTitle d-flex justify-content-between me-4 align-items-center col-12"
+            style="top:1px; position: relative;">
+            <h3>Your Cart</h3>
+            <span (click)="deleteAll()" *ngIf="totalItems > 0">Clear All</span>
+        </div>
+        <div class="cartItems  bg-white rounded p-3 my-4 col-11 ms-3">
+            <div *ngFor="let c of card" class="Items d-flex flex-column my-1 ">
+                <ng-container *ngIf="c.quantity > 0">
+                    <div class="d-flex justify-content-between col">
+                        <div class="d-flex flex-column justify-content-between align-items-start  col-4">
+                            <img [src]=c.img width="70px" height="70" alt="item">
+                            <span  style="font-size: 14px;text-decoration: underline;color: #c76b39;">customise</span>
+                        </div>
+                        <div class="d-flex flex-column justify-content-between align-items-start  col-4">
+                            <span class="oder-item-name">{{c.title | uppercase}}
+                            </span>
+                            <span class="fs-5">₹{{c.price}}</span>
+                        </div>
+                        <div class="d-flex flex-column justify-content-between  col-4">
+                            <figure class="d-flex align-self-center">
+                                <img src="./../../../assets/icon/veg.png" width="12px">
+                            </figure>
+                            <div class="d-flex align-items-center gap-2">
+                                <button class="bttn" (click)="removeadd(c, plus)" value="-" #plus>–</button>
+                                <span class="">{{c.quantity}}</span>
+                                <button class="bttn" (click)="removeadd(c, minus)" #minus value="+"
+                                    style="background-color: #f56416;">+</button>
+                            </div>
+                        </div>
+                    </div>
+                </ng-container>
+            </div>
+            <div class="d-flex position-absolute flex-column align-items-center justify-content-center ps-5 pt-3" *ngIf="empty">
+                <img class="" src="./../../../assets/icon/paper.png" width="150px">
+                <p class="fs-4 fw-1">Opps your cart is Empty..</p>
+            </div>
+        </div>
+        <div class=" cartBottom  mt-2 rounded d-flex justify-content-between align-items-center col-11 ms-3">
+            <div class="p-1 d-flex gap-2 align-items-center">
+                <div>
+                    <img src="./../../../assets/icon/shopping-cart.png" width="30px">
+                </div>
+                <div class="d-flex align-items-center gap-1 justify-content-between">
+                    <span>{{totalItems}}</span>
+                    <span>items</span>
+                </div>
+                <div style="border-left:2px solid rgb(42, 41, 41) ;">
+                    <span class="mx-3">₹{{totalprice}}</span>
+                </div>
+            </div>
+            <div class="d-flex align-items-center me-4" style="font-weight: 900px; font-size: medium;">
+                <div>
+                    <a routerLink="/Cart" style="text-decoration: none; color:black">View Cart</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

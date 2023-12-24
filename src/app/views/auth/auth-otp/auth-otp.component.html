@@ -1,0 +1,80 @@
+<div class="authPage w-100 col">
+    <div
+        class="authInfoConatainer col-lg-6 col-12 d-flex justify-content-center align-items-xs-start align-items-md-center align-items-lg-center  pt-5 p-lg-0 mt-5 mt-lg-0">
+        <div *ngIf="display == true" class="infoContainer col-lg-6 col-12 d-flex flex-column justify-content-start ">
+            <div class="infoGreet d-flex flex-column  align-items-lg-center w-100">
+                <h2>Namaste!</h2>
+                <p>Welcome to Mood & Food</p>
+            </div>
+            <form class="infoForm  d-flex flex-column align-items-lg-start">
+                <div class="infoFormLabel">
+                    <label *ngIf="!hidee">Enter your mobile number</label>
+                    <p *ngIf="hidee">Mobile Number</p>
+                </div>
+
+                <div class="infoFormInput p-2 border border-danger border-1 d-flex rounded">
+                    <img class="align-self-center" *ngIf="!hidee" src="./../../../assets/icon/us.png" width="20px"
+                        height="20px">
+                    <input (click)="hide()" class="p-2 w-100 " type="text" placeholder="10 Digit Mobile Number">
+                </div>
+            </form>
+            <div class="infoDetails  d-flex flex-column  align-items-lg-center">
+                <button type="submit" class="btn" (click)="show()">Verify Mobile</button>
+                <div class="">
+                    <p>By clicking the <span class="text-danger">"Verify Mobile"</span>,you agree to our <a
+                            style="text-decoration: underline;color: rgb(240, 146, 22);">Terms and Conditions</a></p>
+                </div>
+            </div>
+        </div>
+        <div *ngIf="display == false" class="infoContainer col-lg-6 col-12 d-flex flex-column justify-content-start ">
+            <div class="infoGreet d-flex flex-column  align-items-lg-center w-100">
+                <h2>Verify Mobile</h2>
+                <p>Enter OTP</p>
+            </div>
+            <form class="infoOtpForm  d-flex flex-column  gap-4">
+
+                <label style="font-size: 13px;">One time Password (OTP) has been sent to {{1234567890}} <span
+                        style="cursor:pointer; font-weight: 400;color:orange" (click)="show()">EDIT</span></label>
+                        <div class="infoFormInput d-flex flex-row gap-2">
+                    <div class="otpBox" id="inputs" class="inputs">
+                        <input #Feild1  class="p-1  w-100 " type="text"
+                            inputmode="numeric" maxlength="6" (keyup)="setFocus($event,Feild1,Feild2)">
+                    </div>
+                    <div class="otpBox">
+                        <input #Feild2  class="p-1 w-100 " type="text"
+                            inputmode="numeric" maxlength="1" (keyup)="setFocus($event,Feild2,Feild3)">
+                    </div>
+                    <div class="otpBox">
+                        <input #Feild3  class="p-1  w-100 " type="text"
+                            inputmode="numeric" maxlength="1" (keyup)="setFocus($event,Feild3,Feild4)">
+                    </div>
+                    <div class="otpBox">
+                        <input #Feild4  class="p-1 w-100 " type="text"
+                            inputmode="numeric" maxlength="1" (keyup)="setFocus($event,Feild4,Feild5)">
+                    </div>
+                    <div class="otpBox">
+                        <input #Feild5  class="p-1 w-100 " type="text"
+                            inputmode="numeric" maxlength="1" (keyup)="setFocus($event,Feild5,Feild6)">
+                    </div>
+                    <div class="otpBox">
+                        <input #Feild6  class="p-1  w-100 " type="text" inputmode="numeric"
+                            maxlength="1">
+                    </div>
+                </div>
+                <div class="d-flex align-self-center">
+                    <span>00:00 min</span>
+                </div>
+            </form>
+            <div class="infoDetails  d-flex flex-column  align-items-lg-center">
+
+                <button type="submit" class="btn" routerLink="/Cart">Verify</button>
+                <div style="font-size: 14px;">
+                    <p>Dont't receive code ? <span style="color: blue; text-decoration: underline;">Resend</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="authImgConatiner col-lg-6">
+        <img class="authimg pt-5 pb-5 p-xl-0 me-1 w-100 w-lg-75" src="../../../assets/icon/mainwaller.jpg" alt="">
+    </div>
+</div>

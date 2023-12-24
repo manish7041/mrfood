@@ -1,0 +1,67 @@
+<div class="User row">
+    <div class="userPage col-12 col-xl-6 d-flex flex-column gap-2">
+        <div class="d-flex justify-content-start justify-content-xl-center align-items-center w-100 ">
+            <p class="position-relative my-1 text-danger fw-bold fs-4 ">Our</p>
+            <img src="./../../../assets/icon/logomodified-removebg-preview.png" width="60px">
+        </div>
+        <div *ngIf="user[0].name === ''" class="d-flex flex-column w-100">
+            <p style="font-size: 18px;font-weight: 600;">Hi</p>
+            <p appUserhover class="position-absolute mt-4 text-primary" style="font-size: 14px;cursor: pointer;"><a
+                    [routerLink]="'/Auth'">Login/Signup</a></p>
+        </div>
+        <div class="d-flex justify-content-between w-100 border border-2 border-warning p-3 rounded "
+            style="background-color: rgb(251, 246, 204);">
+            <div class="d-flex align-items-center gap-2">
+                <div *ngIf="user[0].img != ''" class="profileimg border border-2 rounded-circle border-warning p-3">
+
+                    <img [src]="user[0].img" width="25px">
+
+                </div>
+                <div *ngIf="user[0].img === ''" class="profileimg border border-2 rounded-circle border-warning p-3">
+
+                    <img src="./../../../../assets/icon/us.png" width="25px">
+
+                </div>
+                <div *ngIf="user[0].name !== ''" class="d-flex flex-column">
+                    <p style="font-size: 18px;font-weight: 600;">{{user[0].name}}</p>
+                    <span>+91 {{user[0].mobile}}</span>
+                </div>
+            </div>
+
+            <div appHeaderHover>
+                <a [routerLink]="'/Profile'"><img src="./../../../assets/icon/edit.png" width="20px"></a>
+            </div>
+        </div>
+        <div class="d-flex bg-light rounded p-1 pt-2  justify-content-between w-100">
+            <div class="d-flex flex-column align-items-center">
+                <a [routerLink]="'/Cart'"></a><img src="./../../../assets/icon/paper.png" width="30px"
+                    style="cursor: pointer;">
+                <p style="font-size:14px;">My orders</p>
+            </div>
+            <div class="d-flex flex-column align-items-center">
+                <a [routerLink]="'/Offer'"></a><img src="../../../assets/icon/offerloud.png" width="39px" height="39px"
+                    style="cursor: pointer;">
+                <p style="font-size:14px;">Offer</p>
+            </div>
+            <div class="d-flex flex-column align-items-center">
+                <a [routerLink]="'/Setting'"><img src="./../../../assets/icon/setting.png" width="40px"></a>
+                <p style="font-size:14px;">My orders</p>
+            </div>
+        </div>
+        <div class="d-flex-column bg-light align-items-start p-1 rounded mb-3 justify-content-between w-100 gap-3">
+            <div *ngFor="let o of option" [id]="o.id" style="cursor:pointer;">
+                <div appUserhover [id]="o.id"
+                    class="d-flex flex-row p-2 ms-3 align-items-center justify-content-start gap-1">
+                    <div class="d-flex justify-content-center p-2 "
+                        style="border: 1px solid yellow; border-radius: 50%;">
+                        <img [src]="o.img" width="22px">
+
+                    </div>
+                    <div class="p-2">
+                        <span style="font-size: 17px;">{{o.title}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

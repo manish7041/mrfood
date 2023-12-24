@@ -1,0 +1,139 @@
+.headerContainer {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    padding: 10px 70px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background: #ffffff;
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    /* box-shadow: 2px 4px 6px #fcf8f81f, inset 0 -1px #dadce0;
+    */
+    box-shadow: 0px 8px 24px 0px rgba(140, 149, 159, 0.2);
+}
+
+.headerLeft {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.headerImg img {
+    max-height: 45px;
+    min-height: 45px;
+    max-width: 71px;
+    min-width: 71px;
+    object-fit: contain;
+    transform: scale(1);
+}
+
+.headerLocation {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.headerSelection {
+    position: relative;
+    width: 176px;
+    height: 66px;
+    border-radius: 10px;
+    background: #f56416;
+    box-shadow: 0 27px 80px #30303026, 0 6px 18px #3030300d;
+    display: flex;
+    align-items: center;
+    color: white;
+    font-weight: 700;
+    font-size: 15px;
+    padding: 0 8px;
+    cursor: pointer;
+    gap: 5px;
+}
+
+
+.headerSelection img {
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    margin-right: 5px;
+}
+
+.dropDown_menu{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    width: 176px;
+    background-color: #fccb06;
+    top:57px;
+}
+.dropDown_menu_option{
+    display: flex;
+    height: 60px;
+    align-items: center;
+    color: white;
+    font-weight: 700;
+    font-size: 15px;
+    padding: 5px 8px;
+    cursor: pointer;
+    gap: 5px;
+}
+.dropDown_menu_option:hover{
+    /* background-color: #f56416; */
+    border-bottom-left-radius:8px;
+    border-bottom-right-radius:7px;
+}
+.headerL {
+    width: 374px;
+    height: 66px;
+    background:white;
+    border: 1px solid rgb(220, 218, 218);
+    box-shadow: 0 5px 20px #6064701a;
+    border-radius: 10px;
+    padding: 0 5px;
+    cursor: pointer;
+}
+.headerRight{
+    color:rgb(5, 5, 5)
+}
+
+.headerRight_Offer,
+.headerRight_Resutrants {
+    font-weight: 700;
+    font-size: 1rem;
+    margin-left: 48px;
+    cursor: pointer;
+    
+}
+
+.headerRight_icons {
+    position: relative;
+    margin-left: 28px;
+}
+
+.cartValue {
+    position: absolute;
+    bottom: 21px;
+    left:20px;
+   width: 15px;
+    font-size: 10px;
+    font-weight: 900px;
+    display: flex;
+    border: 1.5px solid black;
+    border-radius: 50%;
+    align-items: center;
+    font-size: 10px;
+    font-weight: 500;
+    justify-content: center;
+}
+
+.headerRight_icons{
+    cursor: pointer;
+}

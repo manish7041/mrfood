@@ -1,0 +1,49 @@
+.foodCard{
+    width: 330px;
+    min-height: 370px;
+    height: 100%;
+    background: rgb(255, 255, 255);
+    box-shadow: 0 4px 20px #a7a7a724;
+    border-radius: 10px;
+    padding: 15px 10px;
+    position: relative;
+    cursor: default;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.form-check-input:checked{
+    background-color:#fccb06;
+  
+}
+.form-check-input{
+    box-shadow: none;
+border-color: none;
+outline:none;
+}
+.form-check-input:focus{
+box-shadow: none;
+border-color: none;
+outline:none;
+}
+
+.foodCart button{
+    background: #e3d1bd;
+    height: 32px;
+    width: 32px;
+    border-radius:35%;
+    display: flex;
+    font-size: 18px;
+    font-weight: 600;
+    padding: 5px;
+    color: white;
+    border: none;
+    outline: none;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.buttn{
+    padding: 6px 130px; font-size: 16px;font-weight:800px; background-color:#f56416;color: white;
+}

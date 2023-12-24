@@ -1,0 +1,65 @@
+<div class="headerContainer">
+    <div class="headerLeft">
+        <div class="headerImg d-flex flex-column align-items-center justify-content-center">
+            <a routerLink="/Menu">
+                <img src="./../../../../assets/icon/logomodified.png">
+            </a>
+            <span style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;font-size: 10px;font-weight: 800;">Mood&Food</span>
+            
+        </div>
+        <div class="headerLocation position-relative">
+            <div class="headerSelection">
+                <ng-container>
+                    <div style="position: relative;align-items: center;justify-content: center;margin-right: 5px;">
+                        <img [src]="selected.icon" width="35px">
+                    </div>
+                    <span>{{selected.title}}</span>
+                    <div class="d-flex align-items-center justify-content-center" (click)="dropDown()">
+                        <img src="./../../../assets/icon/down-arrow.png" width="15px">
+                    </div>
+                </ng-container>
+
+            </div>
+            <div class="dropDown_menu rounded-bottom-3" *ngIf="condition">
+                <div class="dropDown_menu_option " *ngFor="let e of dropDownItem" (click)="selectedItem(e.id)">
+                        <div style="position: relative;align-items: center;justify-content: center;margin-right: 5px;">
+                            <img [src]="e.icon" width="35px">
+                        </div>
+                        <span>{{e.title}}</span>
+                    </div>
+            </div>
+            <div class="headerL">
+                <div style="
+        display: flex;
+        align-items: center;
+        border-radius: 10px;
+        padding: 12px 12px 16px 20px;">
+                    <p>Lorem ipsum, dolor sit ametmandue</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="headerRight d-flex flew-row align-items-center justify-content-center gap-5" >
+        <div class="headerRight_sectionOne d-flex flex-row align-items-center border-start">
+       
+            <span appHeaderHover class="headerRight_Resutrants">Resturants Nearby</span>
+        </div>
+        <div class="headerRight_sectionTwo d-flex flex-row align-items-center">
+            <div  class="headerRight_icons">
+                <img appScale [routerLink]="'/User'" src="./../../../assets/icon/user.png" width="20px">
+            </div>
+            <div appScale class="headerRight_icons">
+                <a [routerLink]="'/Cart'">
+                <img  class="position-relative" src="./../../../assets/icon/shopping-cart.png" width="30px">
+                </a>
+                <div  class="cartValue">{{totalItems}}</div>
+            </div>
+            <div class="headerRight_icons">
+                <a [routerLink]="'/Search'">
+                <img appScale src="./../../../assets/icon/search.png" width="23px">
+                </a>
+            </div>
+        </div>
+    </div>
+
+</div>

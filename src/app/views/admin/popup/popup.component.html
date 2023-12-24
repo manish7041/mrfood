@@ -1,0 +1,20 @@
+<div class="m" *ngIf="display">
+  <div class="content d-flex flex-column">
+    <div appHeaderHover class="d-flex justify-content-end p-1">
+      <span class="mx-3" style="cursor: pointer; font-size: 18px;" (click)="onAdd('false')">x</span>
+    </div>
+    <div class="info w-100 bg-light">
+      <img [src]="data.img" class="rounded img-fluid" width="300px">
+      <p class="fw-bolder">{{data.title}}</p>
+      <div class="d-flex justify-content-center align-item-center w-50 ms-3">
+        <p style="
+         color:rgb(220, 168, 119);font-size: 12px;">{{data.descp}}</p>
+      </div>
+
+      <p class="fw-bold">Order Value ₹{{data.price}}</p>
+    </div>
+    <div class="d-flex justify-content-end p-2">
+      <span appSearchoptionhover class="btn button" (click)="onAdd('true')" >Add Item</span>
+    </div>
+  </div>
+</div>

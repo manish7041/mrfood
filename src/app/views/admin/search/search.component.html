@@ -1,0 +1,77 @@
+<div class="searchContainer">
+    <div class="nn">
+        <div class="bg-white ps-5 pe-5 pt-5">
+            <div class="searchHeadContainer d-flex align-items-center justify-content-between">
+                <h4>Search Menu</h4>
+            </div>
+            <div class="searchQueryContainer d-flex align-items-center justify-content-between">
+                <div class="menuOptionContainer d-flex">
+                    <div class="d-flex" *ngFor="let e of data; index as i">
+                        <div class="menuOption" [id]="i" [ngClass]="{directiveClass:i == selected && bool}">
+    
+                            <span (click)="onSelect(i)">{{e}}</span>
+                            <div (click)="select()" *ngIf="bool && i == selected"
+                                class="d-flex align-items-center justify-content-center rounded-circle bolder " style="border:1px solid #333;
+                                    "><span class="option">x</span></div>
+    
+    
+                        </div>
+                    </div>
+    
+                </div>
+                <div class="menuSearchContainer">
+                    <div class="search w-100">
+                        <input appHeaderHover class="input" type="text" placeholder="search here" [(ngModel)]="filterValue">
+                        <img src="./../../../assets/icon/searchMenuIcon.png" width="30px">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="filterItemsContainer d-flex flex-column">
+            <div class="form-check form-switch d-flex  align-self-center align-items-center gap-3  justify-content-center" *ngIf="filterValue">
+                <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" [value]="calories" #cal
+                    (click)="showCalories()">
+                <label class="form-check-label" for="flexSwitchCheckChecked"
+                    style="font-family: Arial, Helvetica, sans-serif;font-size: 12px;">show calories</label>
+            </div>
+            <div *ngIf="!filterValue" class="info">
+                <span>Search menu items </span>
+            </div>
+            <div class="foodCardContainer rounded d-flex flex-wrap gap-5 p-3" style="width: 100%;">
+                <div class="foodCard d-flex flex-column gap-2" *ngFor="let f of food | filterpipe:filterValue">
+                    <div class="">
+                        <img class="flex-end " style="margin-left:95%;" src="./.././../assets/icon/veg.png" width="15px">
+                        <img class="rounded" [src]="f.img" width="280px">
+                    </div>
+                    <div class="d-flex flex-column">
+                        <span class="fw-bolder" style="font-size: 16px;">{{f.title}}</span>
+                        <span class="text-wrap fw-normal" style="    white-space: nowrap!important;
+                            overflow: hidden!important;
+                            text-overflow: ellipsis!important;
+                            margin-top: 5px; color:rgb(220, 168, 119);font-size: 12px;">{{f.descp}}</span>
+                    </div>
+                    <div class="d-flex align-items-center gap-5">
+                        <span class="fs-5 fw-bold flex-start">₹{{f.price}}</span>
+                        <span class="align-items-center d-flex"
+                            style="margin-left: 120px;font-family:Verdana, Geneva, Tahoma, sans-serif;color: #ee2121;font-size: 13px;"
+                            *ngIf="calories"><img src="./../../../assets/icon/calorie.png"
+                                width="18px">{{f.calories}}</span>
+                    </div>
+                    <div class="d-flex align-self-center" *ngIf="f.quantity < 1">
+                        <button  class="btn buttn"
+                            style="padding: 7px 120px; font-size: 16px;font-weight:800px; background-color:#f56416;color: white;"
+                            (click)="addItem(f.id,f)" data-bs-toggle="modal" data-bs-target="#staticBackdrop">+Add</button>
+                    </div>
+                    <div class="foodCart d-flex align-items-center justify-content-center  gap-2" *ngIf="f.quantity > 0">
+                        <button class="" #minus (click)="removeadd(f,minus)"
+                            value="-">–</button>
+                        <span class="">{{f.quantity}}</span>
+                        <button class="" style="background-color: #f56416;" #plus
+                            (click)="removeadd(f,plus)" value="+">+</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div appViewcontainer></div>

@@ -1,0 +1,16 @@
+.mainContainer {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    /* overflow: hidden; */
+}
+
+.main-section {
+    height:100%;
+    overflow:auto;
+}
+
+.footer {
+    height: 100px;
+}

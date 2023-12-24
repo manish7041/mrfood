@@ -1,0 +1,96 @@
+<div class="profile col m-0 m-lg-5 ps-lg-5 d-flex flex-column-reverse flex-lg-column">
+   <div class="one d-flex col-12 justify-content-center justify-content-lg-start align-items-center gap-5">
+      <div class="d-none d-lg-flex flex-lg-column col-lg-5">
+         <h2 style="font-size: 23px;font-weight: 700;">Personal Details</h2>
+         <p style="position: relative;top:-10px;font-size: 17px;font-weight: 400;">Edit Name, Email, Phone Number and
+            Birth date</p>
+      </div>
+      <div class=" d-flex align-items-center justify-content-center  justify-content-lg-end col-12 col-lg-5">
+         <button class="btn save btn-secondary col-12 col-md-6 col-lg-4">Save Changes</button>
+      </div>
+   </div>
+   <div
+      class="one d-flex flex-column flex-lg-row  justify-content-center justify-content-lg-start col-12  mt-5  m-0  me-lg-5 ">
+
+      <div
+         class="d-flex flex-column  justify-content-center align-items-center align-self-center align-self-lg-start col-12 col-md-1 mt-lg-1">
+         <div class="d-flex border border-2 rounded-circle justify-content-center align-items-center "
+            style="width: 100px; height:100px;">
+            <img src="./../../../assets/icon/us.png" alt="img" width="50px" height="50px">
+
+         </div>
+         <div>
+            <span class="w-100 d-flex align-items-center mt-3 text-primary" style="font-size: 12px;">Change
+               Picture</span>
+               <input type="file">
+         </div>
+
+
+
+
+      </div>
+      <form class="infoForm d-flex flex-column align-items-lg-start col-12 col-lg-6 ms-0 ms-lg-5">
+         <div class="d-flex flex-column w-100">
+            <div class="infoFormLabel">
+               <label class="labelOne" for="1" *ngIf="inputId != '1'">Enter your full name <span
+                     class="text-danger fw-bolder">*</span></label>
+               <label class="labelTwo" *ngIf="inputId == '1'">Full Name <span
+                     class="text-danger fw-bolder">*</span></label>
+            </div>
+
+            <div class="infoFormInput p-2 border border-danger border-1 d-flex rounded">
+               <img class="align-self-center" *ngIf="inputId != '1'" src="./../../../assets/icon/us.png" width="20px"
+                  height="20px">
+               <input (click)="hide('1')" class="p-2 w-100 " type="text" placeholder="Enter your full name" id="1">
+            </div>
+
+         </div>
+
+         <div class="d-flex flex-column w-100">
+            <div class="infoFormLabel">
+               <label class="labelOne" for="2" *ngIf="inputId != '2'">Enter your mobile number here</label>
+               <label class="labelTwo" *ngIf="inputId === '2'">Mobile Number</label>
+            </div>
+
+            <div class="infoFormInput p-2 border border-danger border-1 d-flex rounded">
+               <img class="align-self-center" *ngIf="inputId != '2'" src="./../../../assets/icon/icons8-phone-50.png"
+                  width="20px" height="20px">
+               <input (click)="hide('2')" class="p-2 w-100 " type="text" placeholder="10 Digit Mobile Number">
+            </div>
+         </div>
+
+         <div class="d-flex flex-column w-100">
+            <div class="infoFormLabel">
+               <label class="labelOne" for="3" *ngIf="inputId != '3'">Enter Your Email ID</label>
+               <label class="labelTwo" for="3" *ngIf="inputId === '3'">Email</label>
+            </div>
+
+            <div class="infoFormInput p-2 border border-danger border-1 d-flex rounded">
+               <img class="align-self-center" *ngIf="inputId != '3'" src="./../../../assets/icon/icons8-email-48.png"
+                  width="20px" height="20px">
+               <input (click)="hide('3')" class="p-2 w-100 " type="text" placeholder="Enter Your Email ID" id="3">
+            </div>
+         </div>
+
+         <div class="d-flex flex-column w-100">
+            <div class="infoFormLabel">
+               <label class="labelOne" for="4" *ngIf="inputId != '4'">Select Your Date of Birth</label>
+               <label class="labelTwo" for="4" *ngIf="inputId === '4'">Date of Birth</label>
+            </div>
+
+            <div class="infoFormInput p-2 border border-danger border-1 d-flex rounded">
+               <img class="align-self-center" *ngIf="inputId != '4'" src="./../../../assets/icon/icons8-date-48.png"
+                  width="20px" height="20px">
+               <input style="outline: none; border:none;" (click)="hide('4')" class="p-2" type="date"
+                  placeholder="Select Your Date of Birth" id="4">
+            </div>
+         </div>
+
+      </form>
+
+   </div>
+   <div class="w-50 align-items-center ms-4 gap-3 d-flex d-lg-none mt-3">
+      <span><img src="./../../../../assets/icon/arrow-left-primary.svg"></span>
+      <span class="text-muted fw-normal">Back</span>
+   </div>
+</div>

@@ -1,0 +1,21 @@
+.User {
+  display: flex;
+  position: relative;
+  top: 0px;
+  box-sizing: border-box;
+  align-items: center;
+  flex-direction: column;
+  background: #efeeee;
+  height: 100vh;
+}
+
+.userPage {
+  top: 30px;
+  padding: 0px 40px;
+  /* background: powderblue; */
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}

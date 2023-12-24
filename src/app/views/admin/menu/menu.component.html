@@ -1,0 +1,33 @@
+<div class="menuContainer ">
+    <div>
+        <div class="menuHeadContainer d-flex align-items-center justify-content-between ms-5 p-4">
+            <h4>Our Menu</h4>
+        </div>
+        <div class="menuQueryContainer d-flex align-items-center justify-content-around">
+            <div class="menuOptionContainer d-flex align-items-center">
+                <div appMenuhover class="menuOption" *ngFor="let e of data">
+                    <div>
+                        <img [src]="e.icon" width="15px">
+                    </div>
+                    <span>{{e.title}}</span>
+                </div>
+            </div>
+            <div class="menuSearchContainer">
+                <div class="search w-100">
+                    <a routerLink="/Search">
+                        <input appHeaderHover class="input" type="text" placeholder="search here">
+                        <img src="./../../../assets/icon/searchMenuIcon.png" width="30px">
+                    </a>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="d-flex w-100 row-12" style="background: rgb(241, 236, 236);height:max-content;">
+        <app-nav class="col-2 "></app-nav>
+        <div class="d-flex col-10 ">
+            <app-food class="flex-start col-8"></app-food>
+            <app-cart class="flex-end col-4 pe-2"></app-cart>
+        </div>
+    </div>
+</div>

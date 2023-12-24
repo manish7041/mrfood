@@ -1,0 +1,55 @@
+<div class="offerContainer fluid-container ">
+        <div class="offerHead d-flex flex-column align-items-center justify-content-between ">
+            <h4>Offers For You</h4>
+            <div class="offerSearchContainer">
+                <div>
+    
+                    <input appHeaderHover type="text" placeholder="Enter Coupon Code" [(ngModel)]="search">
+                    <img src="./../../../assets/icon/search.png" width="30px">
+                </div>
+    
+            </div>
+        </div>
+        <div class="offerCardConatiner ">
+        <ng-container *ngIf="!search">
+            <div class="offerCard" *ngFor="let o of  offers">
+                <div class="d-flex justify-content-between w-100">
+                    <span class="code p-1 fw-bolder rounded">{{o.title}}</span>
+                    <span class="codeOffer  text-white  flex-end fw-bolder" *ngIf="o.codeoffer">{{o.codeoffer}}</span>
+                </div>
+                <div class="d-flex flex-column  justify-content-around my-1">
+                    <p style="font-size: 14px;" class="fw-bold">{{o.subtitle}}{{o.offerprice}}</p>
+                    <p style="font-size: 14px;" [ngClass]="{overflownone: id == o.id && bool, overfloww: id !== o.id}">{{o.description}}</p>
+                    <span #btn (click)="showOverFlow(btn)" [id]="o.id" [textContent]="o.id == id ? showTag:'Show More'"
+                        class="showmore"></span>
+    
+                    <div class="offerCard_Bottom">
+                        <span class="condition">Min Cart Value excluding delivery fees and taxes ₹{{o.offerprice}}</span>
+                        <a [routerLink]="'/Auth'"><span class="notlogin">Please login to avail offers</span></a>
+                    </div>
+                </div>
+    
+            </div>
+        </ng-container>
+        <ng-container *ngIf="search">
+            <div class="offerCard" *ngFor="let o of  offers | filterpipe:search">
+                <div class="d-flex justify-content-between w-100">
+                    <span class="code p-1 fw-bolder rounded">{{o.title}}</span>
+                    <span class="codeOffer  text-white  flex-end fw-bolder" *ngIf="o.codeoffer">{{o.codeoffer}}</span>
+                </div>
+                <div class="d-flex flex-column  justify-content-around my-1">
+                    <p class="f-5 fw-bold">{{o.subtitle}}{{o.offerprice}}</p>
+                    <p [ngClass]="{overflownone: id == o.id && bool}">{{o.description}}</p>
+                    <p #btn (click)="showOverFlow(btn)" [id]="o.id" [textContent]="bool && o.id == id ? showTag:'Show More'"
+                        class="showmore"></p>
+    
+                    <div class="offerCard_Bottom">
+                        <span class="condition">Min Cart Value excluding delivery fees and taxes ₹{{o.offerprice}}</span>
+                        <span class="notlogin">Please login to avail offers</span>
+                    </div>
+                </div>
+    
+            </div>
+        </ng-container>
+        </div>
+</div>

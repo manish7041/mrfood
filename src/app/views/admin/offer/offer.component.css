@@ -1,0 +1,116 @@
+.offerContainer{
+    /* background-color: rgb(249, 239, 239); */
+    background: #efeeee;
+    box-sizing: border-box;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* .nn{
+    background: #efeeee;
+} */
+.offerHead{
+
+    position: relative;
+    padding:30px 0px;
+}
+.offerHead h4{
+    font-size: 50px;
+    font-weight: 700;
+}
+
+
+
+.offerSearchContainer{
+    position: relative;
+    top: 30px;
+    border: 1px solid #c4c4c4;
+    border-radius: 6px;
+    min-height: 50px;
+    padding: 12.5px 21px;
+    color: #6d6d6d;
+    width: 380px;
+    background-color: white;
+    box-shadow: 0 5px 20px #6064701a;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.offerSearchContainer input{
+    width: 90%;
+    border: none;outline: none;
+}
+
+
+.offerCardConatiner{
+    position: relative;
+    row-gap: 20px;
+    padding: 30px 0px;
+    display: flex;
+    flex-direction: row;
+    column-gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+
+.offerCard{
+    
+     width: 320px;
+    height: 350px;
+    border-radius: 10px;
+    padding: 12px;
+    box-shadow: 0 2px 2px #fcfafa1a;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+}
+
+.code{
+    font-size: 14px;
+    background-color:#fccb06;
+
+}
+.codeOffer{
+    font-size: 14px;
+    top:0px;right:0px;position:absolute ;padding: 4px 6px;border-radius: 0px 10px;
+    background-color:#f56416 ;
+
+}
+
+.overfloww{
+    height: 44px;
+    font-size:14px;
+    overflow: hidden;
+}
+.overflownone{
+    height:fit-content;
+    font-size:14px;
+   
+}
+.offerCard_Bottom{
+    position: relative;
+    margin-top: 35px;
+    display: flex;
+    justify-content: space-around;
+    gap:20px;
+    align-items: center;
+}
+
+.condition{
+    font-size: 12px;
+    text-decoration: underline;
+}
+.notlogin{
+    color: #6d6d6d;
+    font-size: 16px;
+    text-decoration: underline;
+}
+.showmore{
+    width: 100px;
+}

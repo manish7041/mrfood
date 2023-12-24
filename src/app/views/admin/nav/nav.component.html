@@ -1,0 +1,20 @@
+<nav class=" me-auto navContainer rounded-end">
+    <div class="nav">
+        <div  *ngFor="let e of navItems" class="navItem"  (click)="activeNav(e.id)" >
+            <div class="navItemsOne" [ngClass]="{activeImg: e.id == currentLink}">
+              <img class="nvImg" src="./../../../assets/icon/navImg/kachori.png">
+            </div>
+            <div class="ps-1 title" [ngClass]="{activeFont: e.id == currentLink}">
+              <span class="">{{e.option}}</span>
+            </div> 
+            <div class="Link rounded-start" [ngClass]="{active: e.id == currentLink}">
+            </div>
+        </div>
+    </div>
+  
+</nav>
+
+          
+
+   
+

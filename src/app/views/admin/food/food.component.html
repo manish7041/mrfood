@@ -1,0 +1,48 @@
+<div class="p-1 w-100 border-end border-2 border-secondry">
+  <div class="position-relative mt-3 mx-2 justify-content-around gap-5 d-flex align-items-center">
+    <div class="flex-start w-75">
+      <h4 class="fs-2 fw-bolder">{{foodtitle ? foodtitle :'Match time meal'}}</h4>
+    </div>
+    <div class="form-check form-switch flex-end align-items-center justify-content-center w-25">
+      <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" [value]="calories" #cal
+        (click)="showCalories()">
+      <label class="form-check-label" for="flexSwitchCheckChecked"
+        style="font-family: Arial, Helvetica, sans-serif;font-size: 12px;">show calories</label>
+    </div>
+  </div>
+  <div class="foodCardContainer rounded d-flex flex-wrap gap-4 p-3">
+    <div class="foodCard d-flex flex-column gap-2" *ngFor="let f of food">
+      <div class="">
+        <img class="flex-end " style="margin-left:95%;" src="./.././../assets/icon/veg.png" width="15px">
+        <img class="rounded img-fluid" src="./../../../assets/icon/samosa-PhotoRoom.png-PhotoRoom.png" >
+      </div>
+
+      <div class="d-flex flex-column">
+        <span class="fw-bolder" style="font-size: 16px;">{{f.title}}</span>
+        <span class="text-wrap fw-normal" style="white-space: nowrap!important;
+                overflow: hidden!important;
+                text-overflow: ellipsis!important;
+                margin-top: 5px; color:rgb(220, 168, 119);font-size: 12px;">{{f.descp}}</span>
+      </div>
+      <div class="d-flex align-items-center gap-5">
+        <span class="fs-5 fw-bold flex-start">₹{{f.price}}</span>
+        <span class="align-items-center d-flex"
+          style="margin-left: 120px;font-family:Verdana, Geneva, Tahoma, sans-serif;color: #ee2121;font-size: 10px;"
+          *ngIf="calories"><img src="./../../../assets/icon/calorie.png" width="10px">{{f.calories}}</span>
+      </div>
+      <div class="d-flex align-self-center" *ngIf="f.quantity < 1">
+        <button class="btn buttn "
+          (click)="addItem(f.id, f)">+ Add</button>
+      </div>
+      <div class="foodCart d-flex align-items-center justify-content-center gap-2" *ngIf="f.quantity > 0">
+        <button class="" #minus (click)="removeadd(f,minus)"
+          value="-">–</button>
+        <span class="">{{f.quantity}}</span>
+        <button class="" style="background-color: #f56416;" #plus (click)="removeadd(f,plus)"
+          value="+">+</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div appViewcontainer></div>
+

@@ -1,0 +1,126 @@
+.searchContainer {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-shadow: 0 4px 20px #a7a7a724;
+    box-sizing: border-box;
+    position: relative;
+    background: #efeeee;
+   min-height: 585px;
+}
+
+.searchHeadContainer h4 {
+    font-size: 48px;
+    font-weight: 700;
+}
+
+.option {
+    padding: 0px 5px;
+}
+
+.menuOption {
+    border: 1px solid grey;
+    border-radius: 50px;
+    padding: 8px 16px;
+    font-size: 13px;
+    font-weight: 700;
+    margin-right: 10px;
+    margin-top: -10px;
+    cursor: pointer;
+    display: flex;
+    gap: 6px;
+    align-items: center;
+    justify-content: center;
+    transition: .2s;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    transform: translateZ(0);
+}
+
+.menuSearchContainer {
+    border: 1px solid #c4c4c4;
+    border-radius: 6px;
+    min-height: 50px;
+    padding: 12.5px 21px;
+    color: #6d6d6d;
+    margin: -10px 0px 15px 0px;
+    width: 400px;
+    background-color: white;
+    box-shadow: 0 10px 9px #b69a8133;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.directiveClass {
+    background-color: #f9f984;
+    border: 2px solid #ff894a;
+    color: black;
+}
+
+
+.input {
+    width: 90%;
+    border: none;
+    outline: none;
+}
+
+
+
+
+.filterItemsContainer {
+    position: relative;
+    background-color: transparent;
+    padding: 10px;
+}
+
+
+
+.foodCard {
+    width: 320px;
+    min-height: 370px;
+    height: 100%;
+    background: rgb(255, 255, 255);
+    box-shadow: 0 4px 20px #a7a7a724;
+    border-radius: 10px;
+    padding: 15px 10px;
+    position: relative;
+    cursor: default;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.form-check-input:checked {
+    background-color: #fccb06;
+}
+
+.form-check-input {
+    box-shadow: none;
+    border-color: none;
+    outline: none;
+}
+
+.form-check-input:focus {
+    box-shadow: none;
+    border-color: none;
+    outline: none;
+}
+
+.foodCart button {
+    width: 32px;
+    height: 32px;
+    border-radius: 32%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    outline: none;
+    border: none;
+}
+
+.info {
+    display: flex;
+    justify-content: center;
+    font-size: 24px;
+    position: relative;
+    top: 100px;
+}
